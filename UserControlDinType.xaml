@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.Dictionary.UserControlDinType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="DataGridDinTypes" AutoGenerateColumns="False" SelectionChanged="DataGridDinTypes_SelectionChanged" Grid.Column="0" Grid.RowSpan="5"
+                  Height="500">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID" Binding="{Binding N_TYPE_ID}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Название рейки" Binding="{Binding VC_NAME}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Код Rose" Binding="{Binding ROSE_CODE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Схема" Binding="{Binding VC_SCHEMA_TEMPLATE}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Тип Дин рейки" Grid.Column="1" Grid.Row="0"/>
+        <TextBox Name="TextBoxDinType" Grid.Row="0" Grid.Column="2" ToolTip="Введите тип Дин рейки" BorderBrush="Black" Margin="2"/>
+        <Button Name="ButtonAddDinType" Content="Добавить" Grid.Column="3" Grid.Row="0" Background="LightSkyBlue" BorderBrush="Black" 
+                Click="ButtonAddDinType_Click"/>
+        <Button Name="ButtonUpdateDin" Content="Изменить" Grid.Column="4" Grid.Row="0" Background="LightSkyBlue" BorderBrush="Black" Click="ButtonUpdateDin_Click"/>
+
+        <Label Content="Код Rose" Grid.Row="1" Grid.Column="1"/>
+        <TextBox Name="TextBoxRose" Grid.Row="1" Grid.Column="2" ToolTip="Введите код Rose" BorderBrush="Black" Margin="2"/>
+
+        <Label Content="Блок для чертежа" Grid.Row="2" Grid.Column="1"/>
+        <TextBox Name="TextBoxSchema" Grid.Row="2" Grid.Column="2" ToolTip="Введите блок для чертежа" BorderBrush="Black" Margin="2"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.Dictionary.UserControlMaterial"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DataGridMaterial" AutoGenerateColumns="False"  
+                  Grid.Row="0" Grid.Column="0" Height="500"
+                  SelectionChanged="DataGridMaterial_SelectionChanged" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID_Материала" Binding="{Binding KorobkiNameMaterialId }"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Название_материала" Binding="{Binding FullName }"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Название материала" Grid.Row="0" Grid.Column="1"/>
+        <TextBox Name="TextBoxMaterials" Grid.Column="2" Grid.Row="0" BorderBrush="Black"  ToolTip="Введите название материала" />
+        <Button Name="ButtonAddMaterials" Content="Добавить" Grid.Column="3" Grid.Row="0" Background="LightSkyBlue" BorderBrush="Black" 
+                Click="ButtonAddMaterials_Click"/>
+        <Button Name="ButtonUpdateMaterials" Content="Изменить" Grid.Column="4" Grid.Row="0" Background="LightSkyBlue" BorderBrush="Black" Click="ButtonUpdateMaterials_Click"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.Dictionary.UserControlGlobalItemType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DataGridItemType" 
+                  Grid.Row="0" Grid.Column="0" Height="500"
+                  AutoGenerateColumns="False" SelectionChanged="DataGridItemType_SelectionChanged" Grid.RowSpan="4">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="ID изделия" Binding="{Binding GlobalItemTypeId }"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Название изделия" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Очередность сортировки" Binding="{Binding N_SORT}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Ввод аксессуара" Binding="{Binding IsVvodAcc}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Тип изделия" Grid.Column="1" Grid.Row="0"/>
+        <TextBox Name="TextBoxItemType" ToolTip="Введите тип изделия" Grid.Column="2" Grid.Row="0" Margin="2"  BorderBrush="Black"/>
+        <Button Name="ButtonAddItemType" Content="Добавить" Grid.Column="3" Grid.Row="0" BorderBrush="Black" 
+                Click="ButtonItemType_Click" Background="LightSkyBlue"/>
+        <Button Name="ButtonUpdateItemType" Content="Изменить" Grid.Column="4" Grid.Row="0" BorderBrush="Black" Background="LightSkyBlue" 
+                Click="ButtonUpdateItemType_Click"/>
+
+        <Label Content="№ Сорта" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Name="TextBoxSort" ToolTip="Введите номер сорта" Grid.Column="2" Grid.Row="1" Margin="2" BorderBrush="Black"/>
+
+        <CheckBox Name="CheckBoxVvodAcc" Content="Ввод аксессуара"  Grid.Column="1" Grid.Row="2"/>
+    </Grid>
+</UserControl>
