@@ -1,0 +1,193 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.UseControlKlemmi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="381"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DataGridKlemmi" 
+                  Margin="1"
+                  Grid.Column="2" Grid.Row="1" Grid.RowSpan="29"                 
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  SelectionChanged="DataGridKlemmi_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Наименование" Binding="{Binding NAME}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Сечение" Binding="{Binding SECHENIE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Тип" Binding="{Binding TYPE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Ток" Binding="{Binding TOK}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Напряжение" Binding="{Binding NAPRYAZENIE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Тип Динрейки" Binding="{Binding DIN_TYPE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Ширина" Binding="{Binding WIDTH}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Длина клеммы" Binding="{Binding LENGTH}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Высота" Binding="{Binding HEIGHT}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Картинка" Binding="{Binding VC_IMG_TEMPLATE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Блок для чертежа" Binding="{ Binding VC_SCHEMA_TEMPLATE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Код ROSE" Binding="{Binding ROSE_CODE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Артикул производителя" Binding="{Binding VC_OWNER_CODE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="IEC" Binding="{Binding B_IEC}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Длина Динрейки" Binding="{Binding N_LENGTH}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Контрольный элемент" Binding="{Binding IS_CONTROL_ELEMENT}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Twice" Binding="{Binding N_TWICE}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Оборудование" Binding="{Binding IsMainEquipment}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Тип элемента" Binding="{Binding GlobalItemTypeId}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Сертификат" Binding="{Binding CertificatesId}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Мин.Баланс" Binding="{Binding IsMinimumBalance}"></DataGridTextColumn>
+                <DataGridTextColumn IsReadOnly="True" Header="Выделяемое__тепло" Binding="{Binding DissipatedHeat}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Atex" IsThreeState="True"  Binding="{Binding B_ATEX}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="TRTS" IsThreeState="True" Binding="{Binding B_TRTS}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="IEC" IsThreeState="True" Binding="{Binding B_IEC}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="C__Active" IsThreeState="True" Binding="{Binding C_ACTIVE}"></DataGridCheckBoxColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <ScrollViewer Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Наименование" Grid.Column="0" Grid.Row="0" ToolTip="Типовое наименование"/>
+                <TextBox Margin="2" Name="TextBoxName" Grid.Column="1" Grid.Row="0"/>
+
+                <Label Content="Сечение" Grid.Column="0" Grid.Row="1" ToolTip="Максимальное сечение гибкого проводника"/>
+                <TextBox Margin="2" Text="" Grid.Column="1"  Name="TextBoxSechenie" Grid.Row="1"/>
+                
+                <Label Content="Ток" Grid.Column="0" Grid.Row="2" ToolTip="Рабочий ток"/>
+                <TextBox Margin="2" Name="TextBoxTok" Grid.Column="1" Grid.Row="2"/>
+
+                <Label Content="Напряжение" Grid.Column="0" Grid.Row="3" ToolTip="Напряжение, при котором будет работать оборудование"/>
+                <TextBox Margin="2" Name="TextBoxNapr" Grid.Column="1" Grid.Row="3"/>
+
+                <Label Content="Ширина(WIDTH)" Grid.Column="0" Grid.Row="4">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/KLEMMA.png" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Margin="2" Name ="TextBoxWidth" Grid.Column="1" Grid.Row="4" />
+
+                <Label Content="Длина Клеммы(LENGTH)" Grid.Column="0" Grid.Row="5">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/KLEMMA.png" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Margin="2" Name="TextBoxLength" Grid.Column="1" Grid.Row="5"/>
+
+                <Label Content="Высота(HEIGHT)" Grid.Column="0" Grid.Row="6">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/KLEMMA.png" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Margin="2" Name="TextBoxHeidth" Grid.Column="1" Grid.Row="6"/>
+
+                <Label Content="Картинка" Grid.Column="0" Grid.Row="7"/>
+                <TextBox Margin="2" Name="TextBoxIMG" Grid.Column="1" Grid.Row="7"/>
+
+                <Label Content="Блок для чертежа" Grid.Column="0" Grid.Row="8" ToolTip="Блок на чертеже C:\ExBoxConfigurator\Blocks\terminals.dxf"/>
+                <TextBox Margin="2" Name="TextBoxSchema" Grid.Column="1" Grid.Row="8"/>
+
+                <Label Content="Код Rose" Grid.Column="0" Grid.Row="9" ToolTip="Артикул производителя компонента Rose"/>
+                <TextBox Margin="2" Name="TextBoxRose" Grid.Column="1" Grid.Row="9"/>
+
+                <Label Content="Артикул производителя" Grid.Column="0" Grid.Row="10" ToolTip="Артикул производителя компонента"/>
+                <TextBox Margin="2" Name="TextBoxOwner" Grid.Column="1" Grid.Row="10"/>
+
+                <!--<Label Content="C__Active" Grid.Column="0" Grid.Row="12" ToolTip="Ограничение на использование компонента"/>
+                <TextBox Margin="2" Name="TextBoxActive" Grid.Column="1" Grid.Row="12"/>-->
+
+                <Label Content="Длина Динрейки" Grid.Column="0" Grid.Row="11" ToolTip="Длина динрейки, необходимая для монтажа внутрь клеммы"/>
+                <TextBox Margin="2" Name="TextBoxNLength" Grid.Column="1" Grid.Row="11"/>
+
+                <Label Content="Контрольный Элемент" Grid.Column="0" Grid.Row="12"/>
+                <TextBox Margin="2" Name="TextBoxControl" Grid.Column="1" Grid.Row="12"/>
+
+                <Label Content="Twice" Grid.Column="0" Grid.Row="13"/>
+                <TextBox Margin="2" Name="TextBoxTwice" Grid.Column="1" Grid.Row="13"/>
+
+                <Label Content="Оборудование" Grid.Column="0" Grid.Row="14"/>
+                <TextBox Margin="2" Name="TextBoxEquip" Grid.Column="1" Grid.Row="14"/>
+
+                <Label Content="ID Сертификата" Grid.Column="0" Grid.Row="15" ToolTip="Сертификат таможенного союза на клемму"/>
+                <TextBox Margin="2" Name="TextBoxCertificate" Grid.Column="1" Grid.Row="15"/>
+
+                <Label Content="Выделяемое тепло" Grid.Column="0" Grid.Row="16" ToolTip="Тепло, выделяемое в рабочем режиме"/>
+                <TextBox Margin="2" Name="TextBoxHead" Grid.Column="1" Grid.Row="16"/>
+
+                <Label Content="Выберите производителя" Grid.Row="17" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxOwner" Grid.Column="1" Grid.Row="17" Margin="2" />
+
+                <Button Content="Изменить" HorizontalAlignment="Center" Margin="2" Width="100" Name="ButtonUpdate"
+                Grid.Column="1" Grid.Row="27" Click="ButtonUpdate_Click" BorderBrush="Black" BorderThickness="1" Height="20"/>
+                <Button Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Center" Margin="2" Width="100"
+                Grid.Column="0" Grid.Row="27" 
+                Click="ButtonAdd_Click" BorderBrush="Black" BorderThickness="1"/>
+                <Button Name="ButtonExport" Content="Export" Margin="2" Width="100" Grid.Column="0" Grid.Row="28" BorderBrush="Black" Click="ButtonExport_Click"/>
+                <Button Name="ButtonImport" Content="Import" Margin="2" Width="100" Grid.Column="1" Grid.Row="28" BorderBrush="Black" Click="ButtonImport_Click"/>
+
+                <Label Content="Выберите тип изделия" Grid.Row="18" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxGlobal" Margin="2" Grid.Column="1" Grid.Row="18" BorderBrush="Black"/>
+
+                <Label Content="Выберите тип дин рейки" Grid.Column="0" Grid.Row="19"/>
+                <ComboBox Name = "ComboBoxDin" Grid.Column="1" Grid.Row="19" BorderBrush="Black" Margin="2"/>
+
+                <Label Content="Выберите тип клеммы" Grid.Row="20" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxGroup" Grid.Column="1" Grid.Row="20" Margin="2" BorderBrush="Gray" 
+                  ></ComboBox>
+
+                <CheckBox Content="Неснижаемый остаток" Grid.Row="21" Grid.Column="1" Margin="2" Name="CheckBoxMinimumBalance" 
+                          ToolTip="Минимальное кол-во изделий, которое всегда должно быть на складе"/>
+                <CheckBox Content="Atex" Grid.Row="22" Grid.Column="1" Margin="2" Name="CheckBoxAtex" ToolTip="Соответствие стандарту ATEX"/>
+                <CheckBox Content="TRTS" Grid.Row="23" Grid.Column="1" Margin="2" Name="CheckBoxTRTS" ToolTip="Соответствие стандарту TRTS"/>
+                <CheckBox Content="IEC" Grid.Row="24" Grid.Column="1" Margin="2" Name="CheckBoxIEC" ToolTip="Соответствие стандарту IEC"/>
+                <CheckBox Content="Основное оборудование" Name="CheckBoxEquipment" Grid.Row="25" Grid.Column="1" Margin="2" ToolTip="Дорогостоящее оборудование долгой поставки"/>
+                <CheckBox Content="C_Active" Name="CheckBoxCActive" Grid.Row="26" Grid.Column="2" Margin="2" ToolTip="Ограничение на использование компонента"></CheckBox>
+            </Grid>
+        </ScrollViewer>
+        <TextBox Name="TextBoxSearch" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" GotFocus="TextBoxSearch_GotFocus" KeyDown="TextBoxSearch_KeyDown" Text="Поиск"/>
+    </Grid>
+</UserControl>

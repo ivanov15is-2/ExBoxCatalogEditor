@@ -1,0 +1,428 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.UserControlKorobki"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ExBoxCatalogEditor">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DataGridKorobki" Margin="1" Grid.Column="2" Grid.Row="1" AutoGenerateColumns="False"
+                  SelectionChanged="DataGridKorobki_SelectionChanged" Grid.RowSpan="47" Grid.ColumnSpan="2" 
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Header="Название" Binding ="{Binding VC_NAME}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Ток" Binding="{Binding TOK}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Материал" Binding="{Binding MATERIAL}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Высота" Binding="{Binding HEIGHT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Ширина" Binding="{Binding WIDTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Глубина" Binding="{Binding DEPTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Полная глубина" Binding="{Binding DEPTH_FULL}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Тип DIN" Binding="{Binding DIN_TYPE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Длина Динрейки" Binding="{Binding N_LENGTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Притупление" Binding="{Binding A_PRITUPLENIE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="А__Верх__Низ" Binding="{Binding A_TOP}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="А__Лево" Binding="{Binding A_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="А__Право" Binding="{Binding A_RIGHT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="A__D__Лево" Binding="{Binding A_D_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="A__D__Ширина" Binding="{Binding A_D_WIDTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__Притупление" Binding="{Binding B_PRITUPLENIE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__Верх__Низ" Binding="{Binding B_TOP}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__Лево" Binding="{Binding B_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__Право" Binding="{Binding B_RIGHT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__D__Лево" Binding="{Binding B_D_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="B__D__Ширина" Binding="{Binding B_D_WIDTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="C__Притупление" Binding="{Binding C_PRITUPLENIE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="C__Верх_Низ" Binding="{Binding C_TOP}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="C__Лево" Binding="{Binding C_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="C__Право" Binding="{Binding C_RIGHT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="С__D__Лево" Binding="{Binding C_D_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="C__D__Ширина" Binding="{Binding C_D_WIDTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="D__Притупление" Binding="{Binding D_PRITUPLENIE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="D__Верх__Низ" Binding="{Binding D_TOP}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="D__Лево" Binding="{Binding D_LEFT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="D__D__Ширина" Binding="{Binding D_D_WIDTH}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Номер вледельца" Binding="{Binding VC_NAME_INT}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Величина" Binding="{Binding M_VALUE}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Мощность" Binding="{Binding N_POWER}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Мощность EX" Binding="{Binding N_POWER_EX}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Имя префикса" Binding="{Binding NamePrefix}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Имя блока" Binding="{Binding BlockName}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="Тип изделий" Binding="{Binding Name}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="ID владельца" Binding="{Binding OwnerId }"/>
+                <DataGridTextColumn IsReadOnly="True" Header="ID сертификата" Binding="{Binding CertificatesId}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N1__5" Binding="{Binding N1_5}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N2__5" Binding="{Binding N2_5}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N4" Binding="{Binding N4}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N6" Binding="{Binding N6}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N10" Binding="{Binding N10}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N16" Binding="{Binding N16}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N25" Binding="{Binding N25}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N35" Binding="{Binding N35}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N50" Binding="{Binding N50}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N70" Binding="{Binding N70}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N95" Binding="{Binding N95}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N120" Binding="{Binding N120}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N150" Binding="{Binding N150}"/>
+                <DataGridTextColumn IsReadOnly="True" Header="N185" Binding="{Binding N185}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <ScrollViewer Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170"></ColumnDefinition>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label Content="Название" Grid.Row="0" Grid.Column="0" ToolTip="Типовое обозначение имени"/>
+                <TextBox Name="TextBoxName" Margin="2" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Content="Ток" Grid.Row="1" Grid.Column="0" ToolTip="Рабочий ток"/>
+                <TextBox Name="TextBoxTok" Grid.Row="1" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Высота(Height)" Grid.Row="3" Grid.Column="0" ToolTip="Габаритная высота"/>
+                <TextBox Name="TextBoxHeight" Margin="2" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Content="Ширина(Width)" Grid.Row="4" Grid.Column="0" ToolTip="Габаритная ширина"/>
+                <TextBox Name ="TextBoxWidth" Margin="2" Grid.Row="4" Grid.Column="1"/>
+
+                <Label Content="А__Притупление" Grid.Row="9" Grid.Column="0" ToolTip="Радиус скругления угла коробки"/>
+                <TextBox Name="TextBoxPrituplenie" Margin="2" Grid.Row="9" Grid.Column="1"/>
+
+                <Label Content="А__Верх__Низ" Grid.Row="10" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+
+                <TextBox Name="TextBoxTop" Margin="2" Grid.Row="10" Grid.Column="1"/>
+
+                <Label Content="А__Лево" Grid.Row="11" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxLeft" Margin="2" Grid.Row="11" Grid.Column="1"/>
+
+                <Label Content="А__Право" Grid.Row="12" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxRight" Margin="2" Grid.Row="12" Grid.Column="1"/>
+
+                <Label Content="A__D__Ширина" Grid.Row="14" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox x:Name="TextBoxADWidth" Margin="2" Grid.Row="14" Grid.Column="1"/>
+
+                <Label Content="B__Притупление" Grid.Row="15" Grid.Column="0" ToolTip="Радиус скругления угла коробки"/>
+                <TextBox Name="TextBoxBprituplenie" Grid.Row="15" Grid.Column="1" Margin="2"/>
+                <Label Content="B__Верх__Низ" Grid.Row="16" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxBTop" Margin="2" Grid.Row="16" Grid.Column="1"/>
+                <Label Content="B__Лево" Grid.Row="17" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxBLeft" Grid.Row="17" Grid.Column="1" Margin="2"/>
+
+                <Label Content="B__Право" Grid.Row="18" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxBRight" Grid.Row="18" Grid.Column="1" Margin="2"/>
+
+                <Label Content="B__D__Лево" Grid.Row="19" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxBDLeft" Grid.Row="19" Grid.Column="1" Margin="2"/>
+
+                <Label Content="B__D__Ширина" Grid.Row="20" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxBDWidth" Grid.Row="20" Grid.Column="1" Margin="2"/>
+
+                <Label Content="C__Верх__Низ" Grid.Row="22" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxCTop" Grid.Row="22" Grid.Column="1" Margin="2"/>
+
+                <Label Content="C__Лево" Grid.Row="23" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxCLeft" Grid.Row="23" Grid.Column="1" Margin="2"/>
+
+                <Label Content="C__Право" Grid.Row="25" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxCRight" Grid.Row="25" Grid.Column="1" Margin="2"/>
+
+                <Label Content="C__D__Ширина" Grid.Row="26" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxCDWidth" Grid.Row="26" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__Верх__Низ" Grid.Row="28" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxDTop" Grid.Row="28" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__Лево" Grid.Row="29" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxDLeft" Grid.Row="29" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__Право" Grid.Row="30" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxDRight" Grid.Row="30" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__D__Лево" Grid.Row="31" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxDDLeft" Grid.Row="31" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__D__Ширина" Grid.Row="32" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxDDWidth" Grid.Row="32" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Артикул производителя" Grid.Row="33" Grid.Column="0" ToolTip="Артикул производителя компонента"/>
+                <TextBox Name="TextBoxOwner" Grid.Row="33" Grid.Column="1" Margin="2"/>
+
+                <!--<Label Content="Мощность" Grid.Row="34" Grid.Column="0"/>
+                <TextBox Name="TextBoxPower" Grid.Row="34" Grid.Column="1" Margin="2"/>-->
+
+                <Label Content="Имя блока" Grid.Row="35" Grid.Column="0" ToolTip="Имя блока из чертежа C:\ExBoxConfigurator\Blocks\boxes.dxf"/>
+                <TextBox Name="TextBoxBlock" Grid.Row="35" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Глубина(Depth)" Grid.Row="5" Grid.Column="0" ToolTip="Глубина без учета крышки"/>
+                <TextBox Name="TextBoxDepth" Grid.Row="5" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Полная глубина(Depth_Full)" Grid.Row="6" Grid.Column="0" ToolTip="Глубина с учетом крышки"/>
+                <TextBox Name="TextBoxFullDepth" Grid.Row="6" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Тип DIN" Grid.Row="7" Grid.Column="0" ToolTip="Тип динреек"/>
+                <TextBox Name="TextBoxDinType" Grid.Row="7" Grid.Column="1" Margin="2"/>
+
+                <!--<Label Content="Мощность_EX" Grid.Row="35" Grid.Column="0"/>
+                <TextBox Name="TextBoxNpower" Grid.Row="35" Grid.Column="1" Margin="2"/>-->
+
+                <Label Content="Имя префикса" Grid.Row="34" Grid.Column="0" ToolTip="Дополнительное имя коробки"/>
+                <TextBox Name="TextBoxPrefix" Grid.Row="34" Grid.Column="1" Margin="2"/>
+
+                <!--<Label Content="Выберите производителя" Grid.Row="40" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxOwners" Grid.Row="40" Grid.Column="1" Margin="2"/>-->
+
+                <Label Content="ID Сертификата" Grid.Row="37" Grid.Column="0" ToolTip="Сертификат таможенного союза на коробку"/>
+                <TextBox Name="TextBoxIDcertificate" Grid.Row="37" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Длина Динрейки" Grid.Row="8" Grid.Column="0" ToolTip="Длина динрейки, необходимая для монтажа внутрь коробки"/>
+                <TextBox Name="TextBoxDinLength" Grid.Row="8" Grid.Column="1" Margin="2"/>
+
+                <Label Content="С__D__Лево" Grid.Row="24" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxCDLength" Grid.Row="24" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Выберите материал" Grid.Row="2" Grid.Column="0" ToolTip="Материал коробки"/>
+                <ComboBox Name="ComboBoxMaterial" Grid.Column="1" Grid.Row="2" Margin="2"/>
+
+                <Label Content="Выберите производителя" Grid.Row="38" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxOwner" Grid.Column="1" Grid.Row="38" Margin="2"/>
+
+                <Label Content="С__Притупление" Grid.Row="21" Grid.Column="0" ToolTip="Радиус скругления угла коробки"/>
+                <TextBox Name="TextBoxCprituplenie" Grid.Row="21" Grid.Column="1" Margin="2"/>
+
+                <Label Content="D__Притупление" Grid.Row="27" Grid.Column="0" ToolTip="Радиус скругления угла коробки"/>
+                <TextBox Name="TextBoxD_PRITUPLENIE" Grid.Row="27" Grid.Column="1" Margin="2"/>
+
+                <Label Content="A__D__Лево" Grid.Row="13" Grid.Column="0">
+                    <Label.ToolTip>
+                        <Image Source="../Resources/Box3.jpg" Width="640" Height="480"/>
+                    </Label.ToolTip>
+                </Label>
+                <TextBox Name="TextBoxADLeft" Grid.Row="13" Grid.Column="1" Margin="2"/>
+
+                <Label Content="Выберите тип изделия" Grid.Row="39" Grid.Column="0"/>
+                <ComboBox Name="ComboBoxGlobalType" Grid.Row="39" Grid.Column="1" Margin="2" BorderBrush="Black"/>
+
+                <CheckBox Name="CheckBoxBalance" Content="Неснижаемый остаток" Grid.Row="36" Grid.Column="1" Margin="3" ToolTip="Минимальное кол-во изделий, которое всегда должно быть на складе"/>
+
+                <CheckBox Name="CheckBoxEquipment" Content="Основное оборудование" Grid.Row="36" Grid.Column="0" Margin="3" ToolTip="Дорогостоящее оборудование долгой поставки"/>
+
+                <Expander Name="ExpanderNominal" Header="N" Grid.Column="0" Grid.Row="40" Grid.ColumnSpan="2" ToolTip="Максимальная мощность изделия коробки">
+                    <Expander.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="N1__5" Grid.Row="0" Grid.Column="0"/>
+                            <TextBox Name="TextBoxN15" Text="0" Grid.Row="0" Grid.Column="1" Margin="2" />
+
+                            <Label Content="N2__5" Grid.Row="1" Grid.Column="0" />
+                            <TextBox Name="TextBoxN25" Text="0" Grid.Row="1" Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N4" Grid.Row="2" Grid.Column="0" />
+                            <TextBox Name="TextBoxN4" Text="0" Grid.Row="2" Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N6" Grid.Row="3" Grid.Column="0"/>
+                            <TextBox Name="TextBoxN6" Text="0" Grid.Row="3" Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N10" Grid.Row="4" Grid.Column="0" />
+                            <TextBox Name="TextBoxN10" Grid.Row="4" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N16" Grid.Row="5" Grid.Column="0" />
+                            <TextBox Name="TextBoxN16" Grid.Row="5" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N25" Grid.Row="6" Grid.Column="0" />
+                            <TextBox Name="TextBoxN252" Grid.Row="6" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N35" Grid.Row="7" Grid.Column="0" />
+                            <TextBox Name="TextBoxN35" Grid.Row="7" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N50" Grid.Row="8" Grid.Column="0"/>
+                            <TextBox Name="TextBoxN50" Grid.Row="8" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N70" Grid.Row="9" Grid.Column="0" />
+                            <TextBox Name="TextBoxN70" Grid.Row="9" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N95" Grid.Row="10" Grid.Column="0" />
+                            <TextBox Name="TextBoxN95" Grid.Row="10" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N120" Grid.Row="11" Grid.Column="0" />
+                            <TextBox Name="TextBoxN120" Grid.Row="11" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N150" Grid.Row="12" Grid.Column="0" />
+                            <TextBox Name="TextBoxN150" Grid.Row="12" Text="0"  Grid.Column="1" Margin="2"/>
+
+                            <Label Content="N185" Grid.Row="13" Grid.Column="0" />
+                            <TextBox Name="TextBoxN185" Grid.Row="13" Text="0"  Grid.Column="1" Margin="2"/>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Button Name="ButtonUpdate" Content="Изменить" HorizontalAlignment="Center" Margin="2" Width="100" 
+                        Grid.Column="0" Grid.Row="41"
+                        Click="ButtonUpdate_Click"  BorderBrush="Gray" BorderThickness="1" Height="23"/>
+                <Button Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Center" Margin="2" 
+                        Grid.Column="1" Grid.Row="41"
+                        
+                        Click="ButtonAdd_Click"  BorderBrush="Gray"  BorderThickness="1" Width="100" Height="25"  VerticalAlignment="Top"/>
+                <Button Name="ButtonExport" Content="Export" BorderThickness="1" Margin="2" Grid.Column="0" Grid.Row="42" 
+                        Click="ButtonExport_Click" Width="100" BorderBrush="Gray"/>
+                <Button Name="ButtonImport" Content="Import" BorderBrush="Gray" BorderThickness="1" Width="100" Margin="2"
+                        Click="ButtonImport_Click" Grid.Column="0" Grid.Row="43"/>
+            </Grid>
+        </ScrollViewer>
+        <TextBox Name="TextBoxSearch" Grid.Row="0" Grid.Column="2" BorderBrush="Gray" Grid.ColumnSpan="2"
+                 GotFocus="TextBoxSearch_GotFocus" KeyDown="TextBoxSearch_KeyDown" Text="Поиск"/>
+    </Grid>
+</UserControl>
+
