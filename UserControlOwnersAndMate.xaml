@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ExBoxCatalogEditor.UserControlOwnersAndMate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:dictionary="clr-namespace:ExBoxCatalogEditor.Dictionary"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer Margin="0,0,0,0" VerticalScrollBarVisibility="Auto">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Expander Header="Производители" Grid.Row="0">
+                <dictionary:UserControlOwners/>
+            </Expander>
+            <Expander Header="Материалы коробок" Grid.Row="2" >
+                <dictionary:UserControlMaterial/>
+            </Expander>
+            <Expander Header="Тип изделий" Grid.Row="3">
+                <dictionary:UserControlGlobalItemType/>
+            </Expander>
+            <Expander Header="Тип дин рейки" Grid.Row="4" Grid.ColumnSpan="2">
+                <dictionary:UserControlDinType/>
+            </Expander>
+            <Expander Header="Аксессуары вводов" Grid.Row="5" Grid.ColumnSpan="2">
+                <dictionary:UserControlCableGlands/>
+            </Expander>
+            <Expander Header="Дополнительные аксессуары" Grid.Row="6" Grid.ColumnSpan="2">
+                <dictionary:UserControlSpecialAccessory/>
+            </Expander>
+        </Grid>
+    </ScrollViewer>
+</UserControl>
